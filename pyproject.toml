@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "flama-demo"
+version = "1.0.0"
+description = "Flama demo repository"
+authors = ["Vortico <vortico@vortico.tech>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "~=3.11.1"
+flama = {version = "^1.3.0", extras = ["pydantic"]}
+scikit-learn = "^1.2.2"
+numpy = "^1.24.3"
+pandas = "^2.0.2"
+pyarrow = "^12.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+aiohttp = "^3.8.4"
+ipython = "^8.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

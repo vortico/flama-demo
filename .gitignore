@@ -1,0 +1,9 @@
+# IntelliJ IDEA
+.DS_Store
+.idea
+
+# Virtual environments
+**/.venv/
+**/.python-version
+**/.ipynb_checkpoints/
+**/__pycache__/

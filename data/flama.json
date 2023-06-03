@@ -1,0 +1,12 @@
+{
+  "app": {
+    "debug": false,
+    "title": "Client churn model",
+    "version": "1.0.0",
+    "description": "This API is serving a churn classifier",
+    "schema": "/schema/",
+    "docs": "/docs/",
+    "models": [{ "url": "/churn/", "path": "data/model.flm", "name": "churn-classifier" }]
+  },
+  "server": { "host": "127.0.0.1", "port": 8000 }
+}
