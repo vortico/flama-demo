@@ -46,9 +46,9 @@ class ChurnModel(ModelResource, metaclass=ModelResourceType):
             Get loss from churn
         description:
             Computes the loss amount estimated according to the model parameters
-            provided in the model artifacts. The model is:
-
-            Loss = churn_proba * ( agents_per_client * estimated_salary - ope_cost)
+            provided in the model artifacts, with loss being the product of the
+            churn probability and the estimated salary of the client minus the
+            operational cost of the company.
         """
         with open(self.model.artifacts["artifact.json"]) as f:
             params = json.load(f)
@@ -64,5 +64,5 @@ class ChurnModel(ModelResource, metaclass=ModelResourceType):
 
 if __name__ == "__main__":
     flama.run(
-        flama_app="src.api.main:app", server_host="0.0.0.0", server_port=8000, server_reload=True
+        flama_app="src.api.app:app", server_host="0.0.0.0", server_port=8000, server_reload=True
     )
