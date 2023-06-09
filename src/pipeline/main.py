@@ -1,3 +1,5 @@
+import flama
+
 import datetime
 import uuid
 
@@ -12,7 +14,6 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import roc_auc_score, f1_score
 from sklearn import set_config
 
-import flama
 
 set_config(display="diagram")
 
@@ -48,9 +49,7 @@ categorical_transformer = Pipeline(
 )
 categorical_features = [
     columns.get_loc(c)
-    for c in dataset.select_dtypes(include=["object"])
-    .drop(["Surname"], axis=1)
-    .columns.values
+    for c in dataset.select_dtypes(include=["object"]).drop(["Surname"], axis=1).columns.values
 ]
 
 
@@ -106,4 +105,3 @@ flama.dump(
 # Load the pipeline:
 p_artifact = flama.load("./data/model.flm")
 l_pipeline = p_artifact.model
-
